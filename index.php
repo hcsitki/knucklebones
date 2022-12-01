@@ -19,7 +19,7 @@
 
 
 <div id="hints">
-    <h3>Placeholder</h3>
+    <h3 id="opp_moves"></h3>
 </div>
 
 <div id="button">

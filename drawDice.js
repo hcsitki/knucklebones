@@ -1,11 +1,3 @@
-function dieBack(x, y) {
-    // this.ctx.strokeStyle = 'blue';
-    // this.ctx.beginPath();
-    // this.ctx.roundRect(x + i*size + (i+1)*padding, y + j*size + (j+1)*padding, size, size, 20);
-    // this.ctx.stroke();
-    // this.ctx.closePath();
-}
-
 function one(x, y) {
     ctx.beginPath();
     ctx.arc(x + size/2, y + size/2, r, 0, 2 * Math.PI);

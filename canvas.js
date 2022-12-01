@@ -1,39 +1,16 @@
-// var canvas = document.getElementById("canvas");
-// var ctx = canvas.getContext("2d");
-
-// // canvas.width = window.innerWidth/1.1;
-// // canvas.height = window.innerHeight/1.1;
-
-// canvas.width = 500;
-// canvas.height = 700;
-
-// var size = canvas.height/10;
-
-// var start_x = canvas.width/2 - size*1.5;
-// var start_y = 20;
-// var player_y = start_y*2 + size*4.5;
-
-// var padding = 30;
-// var r = size/15;
-// var die_r = size/4;
-
-// var currentRoll = -1;
-// var activePlayer = -1;
-
-
 function drawBoard(){
     
     this.ctx.fillStyle = "white";
     this.ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     drawNames();
-    console.log("start_x= "+start_x);
-    console.log("padding= "+padding);
-    tmp = start_x+padding*2;
-    console.log("start_x+padding*2= "+ tmp);
-    console.log("col1Bounds= ");
-    console.log(col1Bounds.x1);
-    console.log("size= "+size);
+    // console.log("start_x= "+start_x);
+    // console.log("padding= "+padding);
+    // tmp = start_x+padding*2;
+    // console.log("start_x+padding*2= "+ tmp);
+    // console.log("col1Bounds= ");
+    // console.log(col1Bounds.x1);
+    // console.log("size= "+size);
 
 
     drawCells(start_x, start_y);
@@ -134,7 +111,8 @@ function doComputerRoll(){
     x = start_x - start_x/2;
     y = start_y + size;
 
-    rollToStroke(rollDice(), x, y);
+    currentRoll = rollDice();
+    rollToStroke(currentRoll, x, y);
 }
 
 // HUMAN player roll
@@ -145,7 +123,7 @@ function doRoll(){
     document.getElementById('roll').disabled = true;
     document.getElementById('roll').innerHTML = "Choose column to play in...";
     
-    currentRoll = rollDice()
+    currentRoll = rollDice();
     rollToStroke(currentRoll, x, y);
 }
 
