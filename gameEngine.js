@@ -57,6 +57,7 @@ function doPlacementLogic(){
             } else {
                 if(oppBoard[i][j]==null) {
                     oppBoard[i][j] = currentRoll;
+                    checkEliminations(i);
                     drawBoard();
                     return;
                 }
@@ -161,6 +162,8 @@ function checkEliminations(col) {
     } else {
         for(i=0; i<3; i++){
             if(playerBoard[col][i] == currentRoll) {
+                move_text.innerHTML = move_text.innerHTML
+                    +"<br>Opponent eliminated your "+currentRoll+"(s) from column "+(col+1);
                 playerBoard[col][i] = null;
             }
         }
