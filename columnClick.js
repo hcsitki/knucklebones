@@ -74,6 +74,7 @@ function addToColumn(col) {
     for(i=0; i<3; i++) {
         if(playerBoard[col][i]==null) {
             playerBoard[col][i]=currentRoll;
+            checkEliminations(col);
             drawBoard();
             if(checkBoardFull()) {
                 checkWin();

@@ -53,7 +53,6 @@ function doPlacementLogic(){
     for(i = 0; i<3; i++){
         for(j=0; j<3; j++) {
             if(checkBoardFull()){
-                alert("full");
                 checkWin();
             } else {
                 if(oppBoard[i][j]==null) {
@@ -87,7 +86,6 @@ function checkBoardFull() {
         }
     }
 
-    alert("full");
     return true;
 
 
@@ -98,6 +96,22 @@ function calcPoints(){
 
     playerScore = 0;
     oppScore = 0;
+
+    for(i=0; i<3; i++){
+        if (oppBoard[i][0] == oppBoard[i][1] && oppBoard[i][0] == oppBoard[i][2]){
+            oppScore += oppBoard[i][0] *9;
+        } else if(oppBoard[i][0] == oppBoard[i][1]){
+            oppScore += oppBoard[i][0] * 4 + oppBoard[i][2];
+        } else if(oppBoard[i][1] == oppBoard[i][2]) {
+            oppScore += oppBoard[i][1] * 4 + oppBoard[i][0];
+        } else if (oppBoard[i][0] == oppBoard[i][2]){
+            oppScore += oppBoard[i][0] * 4 + oppBoard[i][1];
+        } else {
+            for(j=0; j<3; j++){
+                oppScore += oppBoard[i][j];
+            }
+        }
+    }
 
     for(i=0; i<3; i++){
         if (playerBoard[i][0] == playerBoard[i][1] && playerBoard[i][0] == playerBoard[i][2]){
@@ -120,11 +134,36 @@ function calcPoints(){
     return [playerScore, oppScore];
 }
 
-// TODO: integrate points
 function checkWin(){
+    document.getElementById('roll').innerHTML = "Game over!";
     scores = calcPoints();
     var playerScore = scores[0];
     var oppScore = scores[1];
 
     move_text.innerHTML = "Player: "+playerScore+"<br>Opponent: "+oppScore;
+    if(playerScore>oppScore) {
+        move_text.innerHTML = move_text.innerHTML+"<br>You win!";
+    } else {
+        move_text.innerHTML = move_text.innerHTML+"<br>You lose!";
+    }
+}
+
+function checkEliminations(col) {
+    
+    if(activePlayer == 0) {
+        for(i=0; i<3; i++){
+            if(oppBoard[col][i] == currentRoll) {
+                move_text.innerHTML = move_text.innerHTML
+                    +"<br>Opponent's "+currentRoll+"(s) eliminated from column "+(col+1);
+                oppBoard[col][i] = null;
+            }
+        }
+    } else {
+        for(i=0; i<3; i++){
+            if(playerBoard[col][i] == currentRoll) {
+                playerBoard[col][i] = null;
+            }
+        }
+    }
+
 }
