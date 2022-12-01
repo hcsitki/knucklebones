@@ -43,7 +43,12 @@ function doOpponentTurn() {
         +"<br>Opponent rolled a "+currentRoll;
     
     doPlacementLogic();
-    switchTurn();
+    if(checkBoardFull()) {
+        checkWin();
+    } else {
+        switchTurn();
+
+    }
 
 }
 
@@ -55,12 +60,7 @@ function doPlacementLogic(){
             if(checkBoardFull()){
                 checkWin();
             } else {
-                if(oppBoard[i][j]==null) {
-                    oppBoard[i][j] = currentRoll;
-                    checkEliminations(i);
-                    drawBoard();
-                    return;
-                }
+                oppChoice();
             }
         }
     }

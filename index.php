@@ -30,6 +30,7 @@
 <script src="playerBoards.js"></script>
 <script src="canvas.js"></script>
 <script src="drawDice.js"></script>
+<script src="oppLogic.js"></script>
 <script src="gameEngine.js"></script>
 <script src="columnClick.js"></script>
 
