@@ -1,0 +1,71 @@
+#canvas {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    background: white;
+    border: 50px solid #291a09;
+    border-radius: 50px;
+}
+
+body {
+    background: rgb(121, 65, 28);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: minmax(min-content, max-content);
+    grid-gap: 1em;
+}
+
+header {
+    grid-column: 1 / span 5;
+}
+
+#can_div {
+    grid-column: 1 / span 3;
+}
+
+#hints {
+    grid-column: 4 / span 2;
+}
+
+#button {
+    grid-column: 1 /span 5;
+}
+
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.content {
+    position: absolute;
+    align-items: left;
+}
+
+#can_div {
+    float:left;
+}
+
+#hints {
+    margin: 20%;
+    float: right;
+}
+
+#roll {
+    position: absolute;
+    bottom: 20%;
+    left: 65%;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border: solid 2px black ;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#roll:disabled {
+    border: solid 2px white ;
+    background-color: black;
+    color: white;
+    cursor: default;
+}
