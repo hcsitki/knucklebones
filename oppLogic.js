@@ -1,5 +1,4 @@
 function oppChoice() {
-    
     // ELIMINATE TRIPLES FIRST
     for(i=0; i<3; i++) {
         if(playerBoard[i][0] == currentRoll 
@@ -7,7 +6,6 @@ function oppChoice() {
             && playerBoard[i][2] == currentRoll) {
                 // if column can be played in, play and then return to doPlacementLogic();
                 if(playIfPossible(i)) {
-                    alert("eliminating trips");
                     return;
                 }
         }
@@ -20,7 +18,6 @@ function oppChoice() {
             || playerBoard[i][0] == currentRoll && playerBoard[i][2] == currentRoll
             || playerBoard[i][1] == currentRoll && playerBoard[i][2] == currentRoll) {
             if(playIfPossible(i)) {
-                alert("eliminating dubs");
                 return;
             }
         }             

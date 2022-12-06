@@ -44,7 +44,6 @@ function drawCells(x, y) {
     // individual die spaces
     for(i=0; i<3; i++) {
         for(j=0; j<3; j++) {
-            // alert("hasdf");
             
             this.ctx.beginPath();
             this.ctx.roundRect(x + i*size + (i+1)*padding, y + j*size + (j+1)*padding, size, size, die_r);

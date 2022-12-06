@@ -2,7 +2,7 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 canvas.width = 500;
-canvas.height = 700;
+canvas.height = canvas.width*1.4;
 
 var size = canvas.height/10;
 

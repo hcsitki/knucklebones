@@ -1,11 +1,10 @@
 startGame();
 
-move_text = document.getElementById('opp_moves');
 
 function startGame() {
+    move_text = document.getElementById('opp_moves');
     drawBoard();
     startingPlayer = pickFirst();
-    startingPlayer = 0;
 
     // If starting player is the HUMAN player
     if(startingPlayer == 0){
@@ -14,6 +13,7 @@ function startGame() {
     } else {
         document.getElementById('roll').innerHTML = "Opponents turn...";
         activePlayer = 1;
+        doOpponentTurn();
     }
 }
 
@@ -39,8 +39,7 @@ function switchTurn(){
 function doOpponentTurn() {
     doComputerRoll();
 
-    move_text.innerHTML = move_text.innerHTML
-        +"<br>Opponent rolled a "+currentRoll;
+    move_text.innerHTML = move_text.innerHTML+"<br>Opponent rolled a "+currentRoll;
     
     doPlacementLogic();
     if(checkBoardFull()) {
@@ -73,9 +72,7 @@ function checkBoardFull() {
     var board;
     if(activePlayer == 0) {
         board = playerBoard;
-        // alert("player");
     } else {
-        // alert("opp");
         board = oppBoard;
     }
 
