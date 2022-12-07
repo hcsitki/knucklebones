@@ -52,7 +52,7 @@ function checkColumn(pos) {
             // console.log(3);
             return 3;
     } else {
-        alert("Choose one of your columns to place your die in");
+        /*alert("Choose one of your columns to place your die in");*/
         return -1;
     }
 }

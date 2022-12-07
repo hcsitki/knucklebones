@@ -5,6 +5,19 @@ function hideTut() {
 	document.getElementById("page").style.display = "grid";
 }
 
+function restart(){
+	document.getElementById( 'reset' ).style.display = "none";
+	document.getElementById( 'roll' ).style.display = "block";
+	for (col=0; col<3; col++){
+		for(i=0; i<3; i++){
+			oppBoard[col][i] = null;
+			playerBoard[col][i] = null;
+		}
+	}
+	move_text.innerHTML = "";
+	startGame();
+}
+
 function startGame() {
     move_text = document.getElementById('opp_moves');
     drawBoard();
@@ -137,7 +150,9 @@ function calcPoints(){
 }
 
 function checkWin(){
-    document.getElementById('roll').innerHTML = "Game over!";
+    document.getElementById('roll').innerHTML = "Roll dice";
+	document.getElementById( 'roll' ).style.display = "none";
+	document.getElementById( 'reset' ).style.display = "block";
     scores = calcPoints();
     var playerScore = scores[0];
     var oppScore = scores[1];
@@ -151,20 +166,26 @@ function checkWin(){
 }
 
 function checkEliminations(col) {
-    
+    done = false;
     if(activePlayer == 0) {
         for(i=0; i<3; i++){
             if(oppBoard[col][i] == currentRoll) {
-                move_text.innerHTML = move_text.innerHTML
-                    +"<br>Opponent's "+currentRoll+"(s) eliminated from column "+(col+1);
+				if(!done){
+					move_text.innerHTML = move_text.innerHTML
+						+"<br>Opponent's "+currentRoll+"(s) eliminated from column "+(col+1);
+					done = true;
+				}
                 oppBoard[col][i] = null;
             }
         }
     } else {
         for(i=0; i<3; i++){
             if(playerBoard[col][i] == currentRoll) {
-                move_text.innerHTML = move_text.innerHTML
-                    +"<br>Opponent eliminated your "+currentRoll+"(s) from column "+(col+1);
+				if(!done){
+					move_text.innerHTML = move_text.innerHTML
+						+"<br>Opponent eliminated your "+currentRoll+"(s) from column "+(col+1);
+					done = true;
+				}
                 playerBoard[col][i] = null;
             }
         }
