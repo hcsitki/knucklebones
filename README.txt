@@ -14,7 +14,10 @@ you can still get outplayed.
 
 We definitely learned a lot about how to use canvases and drawing. We decided to do stuff like drawing the
 dice within our own code in order to help us understand what was going on with the canvas coordinate-grid
-system. 
+system.
+
+Also, a cool feature is the custom font used on the webpage. We had to figure out how to import a font
+into the HTML and then access it within the CSS.
 
 Overall, this was a cool project and I think we got an enjoyable game out of it.
 
