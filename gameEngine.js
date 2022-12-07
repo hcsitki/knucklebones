@@ -1,5 +1,9 @@
 startGame();
 
+function hideTut() {
+	document.getElementById("tutorial").style.display = "none";
+	document.getElementById("page").style.display = "grid";
+}
 
 function startGame() {
     move_text = document.getElementById('opp_moves');
@@ -39,7 +43,7 @@ function switchTurn(){
 function doOpponentTurn() {
     doComputerRoll();
 
-    move_text.innerHTML = move_text.innerHTML+"<br>Opponent rolled a "+currentRoll;
+    move_text.innerHTML = move_text.innerHTML="Opponent rolled a "+currentRoll;
     
     doPlacementLogic();
     if(checkBoardFull()) {

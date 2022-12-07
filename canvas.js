@@ -1,6 +1,6 @@
 function drawBoard(){
     
-    this.ctx.fillStyle = "white";
+    this.ctx.fillStyle = "black";
     this.ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     drawNames();
@@ -26,8 +26,10 @@ function drawBoard(){
 
 
 function drawNames(){
-    ctx.strokeText("Opponent", start_x - start_x*.5, start_y+size*2.5);
-    ctx.strokeText("Player (You)", start_x - start_x*.5, player_y+player_y/2);
+	this.ctx.fillStyle = "white";
+	this.ctx.font = "bold 24px serif";
+    ctx.fillText("Opponent", 30, start_y+size*2.5);
+    ctx.fillText("Player (You)", 20, player_y+player_y/2);
 }
 
 
@@ -36,7 +38,7 @@ function drawCells(x, y) {
     // this.ctx.strokeRect(start_x, start_y, size*3+padding*4, size*3+padding*4);
 
     // Bounding boxes of columns
-    this.ctx.strokeStyle = 'black';
+    this.ctx.strokeStyle = 'white';
     this.ctx.strokeRect(x+padding/2, y+padding/2, size+padding, size*3+padding*3);
     this.ctx.strokeRect(x+padding*1.5 + size, y+padding/2, size+padding, size*3+padding*3);
     this.ctx.strokeRect(x+padding*2.5 + 2*size, y+padding/2, size+padding, size*3+padding*3);
@@ -70,7 +72,7 @@ function fillBoard(){
 
 function drawDieSpot(x, y){
     this.ctx.beginPath();
-    this.ctx.roundRect(x - x/2, y+size, size, size, die_r);
+    this.ctx.roundRect(50, y+size, size, size, die_r);
     this.ctx.stroke();
     this.ctx.closePath();
 }
@@ -116,7 +118,7 @@ function doComputerRoll(){
 
 // HUMAN player roll
 function doRoll(){
-    x = start_x - start_x/2;
+    x = 50;
     y = player_y + size;
 
     document.getElementById('roll').disabled = true;

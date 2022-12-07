@@ -2,36 +2,52 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="common.css" />
-
+		<link rel="icon" type="image/x-icon" href="thumbnail.jpg">
+		<title>Knucklebones</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Piazzolla:opsz,wght@8..30,500&display=swap" rel="stylesheet">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Piazzolla:opsz,wght@8..30,500&display=swap');
+		</style>
     </head>
 <body>
-
-
 <header>
     <h1>KNUCKLEBONES</h1>
 </header>
 
-<div id="can_div" style="text-align:center">
-    <canvas id="canvas">
-    </canvas>
+<div id="tutorial">
+	<h2>How to Play</h2>
+	<p>Your score is calculated by adding all of your dice together.</p>
+	<h3>Match Dice</h3>
+	<p>When dice of the same value are placed in the same column, multiply their value.</p>
+	<h3>Destroy Opponent</h3>
+	<p>Destroy your opponents die by matching yours to theirs.</p>
+	<button id="start" onclick="hideTut()">Begin Game</button>
 </div>
 
+<div id="page">
+	<div id="can_div" style="text-align:center">
+		<canvas id="canvas">
+		</canvas>
+	</div>
 
-<div id="hints">
-    <h3 id="opp_moves"></h3>
+	<div id="hints">
+		<h3 id="opp_moves"></h3>
+	</div>
+
+	<div id="button">
+		<button id="roll" onclick="doRoll()" disabled>Roll dice</button>
+	</div>
+
+
+	<script src="playerBoards.js"></script>
+	<script src="canvas.js"></script>
+	<script src="drawDice.js"></script>
+	<script src="oppLogic.js"></script>
+	<script src="gameEngine.js"></script>
+	<script src="columnClick.js"></script>
 </div>
-
-<div id="button">
-    <button id="roll" onclick="doRoll()" disabled>Roll dice</button>
-</div>
-
-
-<script src="playerBoards.js"></script>
-<script src="canvas.js"></script>
-<script src="drawDice.js"></script>
-<script src="oppLogic.js"></script>
-<script src="gameEngine.js"></script>
-<script src="columnClick.js"></script>
 
 </body>
 </html>

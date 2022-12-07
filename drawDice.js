@@ -107,7 +107,7 @@ function six(x,y) {
 function resetDie(x, y) {
     ctx.clearRect(x, y, size, size);
     // ctx.strokeRect(x, y, size, size);
-     this.ctx.beginPath();
+    this.ctx.beginPath();
     this.ctx.roundRect(x, y, size, size, die_r);
     this.ctx.stroke();
     this.ctx.closePath();

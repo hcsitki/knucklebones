@@ -85,7 +85,4 @@ function addToColumn(col) {
             break;
         }
     }
-
-    
-    // TODO: call column logic checks
 }

@@ -1,7 +1,7 @@
 KNUCKLEBONES
 Hunter Sitki & Zac Wilson
 
-We wanted to recreate the game of Knucklebones, a game that is a minigame in another video
+We wanted to recreate the game of Knucklebones, a minigame within another video
 game, Cult of the Lamb. 
 
 Definitely one of the hardest parts of making this game was getting the correct bounding boxes on 
@@ -17,3 +17,5 @@ dice within our own code in order to help us understand what was going on with t
 system. 
 
 Overall, this was a cool project and I think we got an enjoyable game out of it.
+
+"That was actually fun" - Avinn Shrestha (roomate)
