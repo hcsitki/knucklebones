@@ -31,24 +31,25 @@ var oppBoard = [
     [null, null, null]
 ]
 
+var offset = 35;
 
 var col1Bounds = {
-    x1: start_x + size/2 + padding,
+    x1: start_x + size/2 + padding-offset,
     y1: player_y+ size/2 + padding, 
-    x2: start_x+size/2+padding+ size+padding,
+    x2: start_x+size/2+padding+ size+padding-offset,
     y2: player_y+size/2+padding+ size*3 + padding*3
 }
 
 var col2Bounds = {
-    x1: start_x + size*1.5 + padding*2,
+    x1: start_x + size*1.5 + padding*2-offset,
     y1: player_y+ size/2 + padding,
-    x2: start_x + size*1.5 + padding*2+ size+padding,
+    x2: start_x + size*1.5 + padding*2+ size+padding-offset,
     y2: player_y+size/2+padding+ size*3 + padding*3
 }
 
 var col3Bounds = {
-    x1: start_x + size*2.5 + padding*3,
+    x1: start_x + size*2.5 + padding*3-offset,
     y1: player_y+ size/2 + padding,
-    x2: start_x + size*2.5 + padding*3+ size+padding,
+    x2: start_x + size*2.5 + padding*3+ size+padding-offset,
     y2: player_y+size/2+padding+ size*3 + padding*3
 }
